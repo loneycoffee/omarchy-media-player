@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "media-player",
+  "name": "Media Player",
+  "version": "1.0.0",
+  "author": "loneycoffee",
+  "license": "MIT",
+  "homepage": "https://github.com/loneycoffee/omarchy-media-player",
+  "description": "What is playing on the bar, behind the logo of the app playing it (Spotify, YouTube, YouTube Music, SoundCloud, Twitch, ...), with previous, play/pause and next. Click to jump to the app's window and workspace; right click opens a panel with the cover, progress and every player. Works with any MPRIS player. Toggle the panel with: omarchy-shell shell toggle media-player",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Media Player",
+    "description": "Now playing with app logo, controls and jump-to-app",
+    "category": "Media",
+    "allowMultiple": false,
+    "defaultSection": "center",
+    "defaults": {
+      "maxWidth": 220,
+      "showArtist": true,
+      "showControls": true,
+      "hideWhenIdle": true
+    },
+    "schema": [
+      { "key": "maxWidth", "type": "integer", "label": "Track label width in pixels (0 hides it)", "defaultValue": 220 },
+      { "key": "showArtist", "type": "boolean", "label": "Show the artist after the title", "defaultValue": true },
+      { "key": "showControls", "type": "boolean", "label": "Show previous / play-pause / next", "defaultValue": true },
+      { "key": "hideWhenIdle", "type": "boolean", "label": "Hide when nothing is playing", "defaultValue": true }
+    ]
+  }
+}
